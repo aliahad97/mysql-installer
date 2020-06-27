@@ -43,6 +43,26 @@ The following script will delete the already built mysql.
 source delete_build.sh
 ```
 
+# Extracting bitcode from executable
+For executable buillt using `wllvm`, you can use the following command to create a bitcode file.
+```
+extract-bc my-executable
+```
+The command will create `my-executable.bc` from `my-execubtale` executable.
+
+# Converting bitcode to executable
+To conver bitcode to executable use the following commands:
+```
+llc -filetype=obj my-file.bc
+```
+where **my-file.bc** would be **mysqld.bc** 
+
+And then compile the object file using:
+```
+gcc my-file.o
+```
+The compilation can be done using `wllvm` too or `wllvm++` for original cpp files. The flags for compilation were earlier extracted and stored in **flags.txt** for future reference.
+
 # References
 You can use the following link for official documentation on building from source for mysql-5.7:
 
