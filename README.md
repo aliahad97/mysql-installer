@@ -78,3 +78,6 @@ Wllvm github repo:
 
 https://github.com/travitch/whole-program-llvm
 
+Conversion to executable from bitcode:
+
+https://stackoverflow.com/questions/32523847/how-to-make-llvm-bc-file-executable
