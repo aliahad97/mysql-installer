@@ -1,0 +1,13 @@
+Description: disable failing tests
+Author: Marc Deslauriers <marc.deslauriers@canonical.com>
+Forwarded: not-needed
+
+Index: mysql-5.7.22/mysql-test/t/disabled.def
+===================================================================
+--- mysql-5.7.22.orig/mysql-test/t/disabled.def	2018-03-04 08:40:40.000000000 -0500
++++ mysql-5.7.22/mysql-test/t/disabled.def	2018-04-19 14:33:41.102827123 -0400
+@@ -17,3 +17,4 @@ mysql_client_test_embedded : Bug#1608406
+ ssl-big                  : Bug #18977126 MAIN.SSL-BIG FAILS WITH TIMEOUT Times out on weekly, disable it
+ explain_for_connection_rqg_json  : Bug#20697533 2015-03-20 erlend Fails several times each day on all platforms
+ explain_for_connection_rqg_trad : Bug#20697533 2015-03-20 erlend Fails several times each day on all platforms
++partition_rename_longfilename : n/a 2018-04-19 mdeslaur Fails when building locally
