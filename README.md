@@ -8,7 +8,7 @@ git clone https://github.com/aliahad97/mysql-installer
 The following script will install `llvm-4.0`, `cllang-4.0`, `cmake` and `wllvm`. It will assume that `pip` is already installed.
 
 ```
-source dep_instal.sh
+source dep_install.sh
 ```
 
 The script will use the following helper scripts:
