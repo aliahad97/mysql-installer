@@ -44,18 +44,24 @@ source delete_build.sh
 ```
 
 # Extracting bitcode from executable
-For executable buillt using `wllvm`, you can use the following command to create a bitcode file.
+For executable buillt using `wllvm`, you can use the following command to create a bitcode file. Note that `wllvm` environment should be set for this and can be done using **wllvm.env** file.
 ```
+source wllvm.env
 extract-bc my-executable
 ```
-The command will create `my-executable.bc` from `my-execubtale` executable.
+The command will create `my-executable.bc` from `my-execubtale` executable. 
+
+If errors are thrown you can check if your wllvm is working properly using the following command.
+```
+wllvm-sanity-checker
+```
 
 # Converting bitcode to executable
 To conver bitcode to executable use the following commands:
 ```
-llc -filetype=obj my-file.bc
+llc-4.0 -filetype=obj my-file.bc
 ```
-where **my-file.bc** would be **mysqld.bc** 
+where **my-file.bc** would be **mysqld.bc** . Note that `llc-4.0` is used since we installed `llvm-4.0` in this guide. 
 
 And then compile the object file using:
 ```
