@@ -15,6 +15,10 @@ CC=wllvm CXX=wllvm++ cmake .. -DDOWNLOAD_BOOST=ON -DWITH_BOOST=$HOME/my_boost
 # Can add -jX flag where X is the number of processors eg. make -j4  
 make 
 
+# You can also only build mysqld using the following instead building everything using make:
+# CC=wllvm CXX=wllvm++ cmake --build ../  --target sqld
+
+
 # Go back to original directory
 cd ../../
 
