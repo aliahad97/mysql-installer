@@ -5,7 +5,7 @@ git clone https://github.com/aliahad97/mysql-installer
 ```
 
 # Installing pre-reqs
-The following script will install `llvm-4.0`, `cllang-4.0`, `cmake` and `wllvm`. It will assume that `pip` is already installed.
+The following script will install `libssl-dev`, `llvm-4.0`, `cllang-4.0`, `cmake` and `wllvm`. It will assume that `pip` is already installed.
 
 ```
 source dep_install.sh
@@ -31,9 +31,9 @@ source mysql_setup.sh
 
 You can alter the following line in script to add flags:
 ```
-CC=wllvm CXX=wllvm++ cmake --build ../  --target sqld
+CC=wllvm CXX=wllvm++ cmake .. -DDOWNLOAD_BOOST=ON -DWITH_BOOST=$HOME/my_boost
 ```
-Only sqld will be built. You can remove `--target sqld` to make the full build. This is where all flags are added to alter what features you want to make in the final installation.
+mysql will be built. The boost library is required for building mysql and so `-DDOWNLOAD_BOOST=ON -DWITH_BOOST=$HOME/my_boost` will download if already no downloaded boost library in the specified directory.
 
 
 # Deleting already built

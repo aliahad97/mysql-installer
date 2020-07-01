@@ -9,8 +9,8 @@ cd mysql-5.7-5.7.29
 mkdir bld
 cd bld
 
-CC=wllvm CXX=wllvm++ cmake --build ../  --target sqld
-
+# installs boost for the first time
+cmake .. -DDOWNLOAD_BOOST=ON -DWITH_BOOST=$HOME/my_boost
 make 
 
 # Go back to original directory
