@@ -10,7 +10,9 @@ mkdir bld
 cd bld
 
 # installs boost for the first time
-cmake .. -DDOWNLOAD_BOOST=ON -DWITH_BOOST=$HOME/my_boost
+CC=wllvm CXX=wllvm++ cmake .. -DDOWNLOAD_BOOST=ON -DWITH_BOOST=$HOME/my_boost
+
+# Can add -jX flag where X is the number of processors eg. make -j4  
 make 
 
 # Go back to original directory
